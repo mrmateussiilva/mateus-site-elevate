@@ -88,7 +88,9 @@ const Contact = () => {
     <section id="contato" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <span className="text-neon-pink font-mono text-sm uppercase tracking-wider">// Contato</span>
+          <div className="font-mono text-neon-green mb-4 text-left max-w-md mx-auto">
+            <span className="text-neon-cyan">mateus@dev:~$</span> mail -s "Vamos conversar?" contato@
+          </div>
           <h2 className="text-4xl md:text-6xl font-bold mt-4 mb-6">
             Vamos <span className="text-neon-cyan">criar</span> algo <span className="text-neon-purple">incrível</span>
           </h2>
@@ -199,8 +201,16 @@ const Contact = () => {
                     href={info.href}
                     className="flex items-center gap-4 p-4 rounded-lg bg-background-tertiary hover:bg-card-hover transition-colors duration-300 group"
                   >
-                    <div className={`p-3 rounded-full bg-${info.color}/20 group-hover:bg-${info.color}/30 transition-colors duration-300`}>
-                      <info.icon className={`w-5 h-5 text-${info.color}`} />
+                    <div className={`p-3 rounded-full transition-colors duration-300 ${
+                      info.color === 'neon-cyan' ? 'bg-neon-cyan/20 group-hover:bg-neon-cyan/30' :
+                      info.color === 'neon-purple' ? 'bg-neon-purple/20 group-hover:bg-neon-purple/30' :
+                      'bg-neon-green/20 group-hover:bg-neon-green/30'
+                    }`}>
+                      <info.icon className={`w-5 h-5 ${
+                        info.color === 'neon-cyan' ? 'text-neon-cyan' :
+                        info.color === 'neon-purple' ? 'text-neon-purple' :
+                        'text-neon-green'
+                      }`} />
                     </div>
                     <div>
                       <p className="text-sm text-foreground-muted">{info.label}</p>

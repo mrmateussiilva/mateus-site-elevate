@@ -31,27 +31,31 @@ const Navigation = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="text-xl font-mono font-bold">
-            <span className="text-neon-purple">&lt;</span>
-            <span className="glitch neon-text text-neon-cyan" data-text="Mateus.JSilva">
-              Mateus.JSilva
+            <span className="text-neon-green">┌──(</span>
+            <span className="glitch neon-text text-neon-cyan" data-text="mateus@dev">
+              mateus@dev
             </span>
-            <span className="text-neon-purple">/&gt;</span>
+            <span className="text-neon-green">)-[</span>
+            <span className="text-neon-purple">~/portfolio</span>
+            <span className="text-neon-green">]</span>
           </div>
 
           <div className="hidden md:flex items-center gap-8">
             {[
-              { label: "Home", id: "home" },
-              { label: "Sobre", id: "sobre" },
-              { label: "Projetos", id: "projetos" },
-              { label: "Blog", id: "blog" },
-              { label: "Contato", id: "contato" },
+              { label: "Home", id: "home", cmd: "cd ~/" },
+              { label: "Sobre", id: "sobre", cmd: "cat about.md" },
+              { label: "Projetos", id: "projetos", cmd: "ls projects/" },
+              { label: "Blog", id: "blog", cmd: "tail -f blog.log" },
+              { label: "Contato", id: "contato", cmd: "mail -s" },
             ].map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-foreground-secondary hover:text-neon-cyan transition-colors duration-300 font-medium relative group"
+                className="text-foreground-secondary hover:text-neon-cyan transition-colors duration-300 font-medium relative group font-mono"
+                title={`$ ${item.cmd}`}
               >
-                {item.label}
+                <span className="text-neon-green text-xs mr-1">$</span>
+                {item.label.toLowerCase()}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary group-hover:w-full transition-all duration-300"></span>
               </button>
             ))}

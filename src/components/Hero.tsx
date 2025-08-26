@@ -33,8 +33,24 @@ const Hero = () => {
 
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="max-w-4xl mx-auto">
-          {/* Greeting */}
+          {/* ASCII Art */}
+          <div className="font-mono text-neon-green text-xs mb-8 opacity-60 hidden md:block">
+            <pre>{`
+  ╭─────────────────────────────────────────────╮
+  │    ____  ____  ____  _  _  ___             │
+  │   (  _ \\( ___)/ ___)( \\/ )/ __)            │
+  │    )(_) ))__)( (___  )  ( \\__ \\            │
+  │   (____/(____)\\___)(_/\\_)(___/            │
+  │                                           │
+  │   ┌─[dev@linux]:~$ who_am_i              │
+  │   └─> mateus.silva : code_artist          │
+  ╰─────────────────────────────────────────────╯
+            `}</pre>
+          </div>
           <div className="mb-8 animate-fade-in">
+            <div className="font-mono text-neon-green mb-2">
+              <span className="text-neon-cyan">mateus@dev:~$</span> whoami
+            </div>
             <span className="text-neon-cyan font-mono text-lg">Olá, eu sou</span>
           </div>
 
@@ -59,15 +75,23 @@ const Hero = () => {
               <div className="w-3 h-3 rounded-full bg-red-500"></div>
               <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
               <div className="w-3 h-3 rounded-full bg-green-500"></div>
+              <span className="ml-4 text-xs text-foreground-muted">mateus@dev: ~/.config/mission</span>
             </div>
             <pre className="text-sm text-neon-green">
-              <code>{`> const minhaMissão = () => {
+              <code>{`┌─[mateus@dev]─[~]
+└──▶ const minhaMissao = () => {
   return "Transformar problemas complexos em
           soluções elegantes através do código";
 };
 
-> console.log(minhaMissão());
-// "Transformar problemas complexos em soluções elegantes através do código"`}</code>
+┌─[mateus@dev]─[~]
+└──▶ echo $minhaMissao
+// "Transformar problemas complexos em soluções elegantes através do código"
+
+┌─[mateus@dev]─[~] 
+└──▶ ps aux | grep passion
+root      1337  0.0  99.9  programming  passion
+`}</code>
             </pre>
           </div>
 

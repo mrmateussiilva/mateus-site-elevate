@@ -33,7 +33,9 @@ const Blog = () => {
     <section id="blog" className="py-20 bg-background-secondary">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <span className="text-neon-green font-mono text-sm uppercase tracking-wider">// Blog</span>
+          <div className="font-mono text-neon-green mb-4 text-left max-w-md mx-auto">
+            <span className="text-neon-cyan">mateus@dev:~/blog$</span> cat *.md | head -n 20
+          </div>
           <h2 className="text-4xl md:text-6xl font-bold mt-4 mb-6">
             <span className="text-neon-cyan">O Código</span> e o <span className="text-neon-purple">Bug</span>
           </h2>
@@ -49,12 +51,20 @@ const Blog = () => {
               className="group glass p-8 rounded-2xl hover-glow hover-lift cursor-pointer relative overflow-hidden"
             >
               {/* Gradient background */}
-              <div className={`absolute inset-0 bg-gradient-to-br from-${post.color}/5 to-transparent group-hover:from-${post.color}/10 transition-all duration-300`} />
+              <div className={`absolute inset-0 transition-all duration-300 ${
+                post.color === 'neon-cyan' ? 'bg-gradient-to-br from-neon-cyan/5 to-transparent group-hover:from-neon-cyan/10' :
+                post.color === 'neon-purple' ? 'bg-gradient-to-br from-neon-purple/5 to-transparent group-hover:from-neon-purple/10' :
+                'bg-gradient-to-br from-neon-green/5 to-transparent group-hover:from-neon-green/10'
+              }`} />
               
               <div className="relative z-10">
                 {/* Category and date */}
                 <div className="flex items-center justify-between mb-4">
-                  <span className={`px-3 py-1 bg-${post.color}/20 text-${post.color} rounded-full text-xs font-medium border border-${post.color}/30`}>
+                  <span className={`px-3 py-1 rounded-full text-xs font-medium border ${
+                    post.color === 'neon-cyan' ? 'bg-neon-cyan/20 text-neon-cyan border-neon-cyan/30' :
+                    post.color === 'neon-purple' ? 'bg-neon-purple/20 text-neon-purple border-neon-purple/30' :
+                    'bg-neon-green/20 text-neon-green border-neon-green/30'
+                  }`}>
                     {post.category}
                   </span>
                   <div className="flex items-center gap-2 text-foreground-muted text-xs">

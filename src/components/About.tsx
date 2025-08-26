@@ -17,7 +17,9 @@ const About = () => {
     <section id="sobre" className="py-20 bg-background-secondary">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <span className="text-neon-cyan font-mono text-sm uppercase tracking-wider">// Sobre mim</span>
+          <div className="font-mono text-neon-green mb-4 text-left max-w-md mx-auto">
+            <span className="text-neon-cyan">mateus@dev:~$</span> cat /about/README.md
+          </div>
           <h2 className="text-4xl md:text-6xl font-bold mt-4 mb-6">
             O <span className="text-neon-purple">artista</span> por trás do <span className="text-neon-cyan">código</span>
           </h2>
@@ -31,7 +33,12 @@ const About = () => {
                 <div className="p-3 rounded-full bg-neon-purple/20">
                   <User className="w-6 h-6 text-neon-purple" />
                 </div>
-                <h3 className="text-xl font-semibold">Minha Jornada</h3>
+                <div>
+                  <div className="font-mono text-xs text-neon-green mb-1">
+                    <span className="text-neon-cyan">$</span> systemctl status developer.service
+                  </div>
+                  <h3 className="text-xl font-semibold">Minha Jornada</h3>
+                </div>
               </div>
               <p className="text-foreground-secondary leading-relaxed">
                 Sou apaixonado por criar soluções que combinam funcionalidade e estética, 
@@ -45,7 +52,12 @@ const About = () => {
                 <div className="p-3 rounded-full bg-neon-cyan/20">
                   <Lightbulb className="w-6 h-6 text-neon-cyan" />
                 </div>
-                <h3 className="text-xl font-semibold">"O Código e o Bug"</h3>
+                <div>
+                  <div className="font-mono text-xs text-neon-green mb-1">
+                    <span className="text-neon-cyan">$</span> vim ~/.config/philosophy/blog.md
+                  </div>
+                  <h3 className="text-xl font-semibold">"O Código e o Bug"</h3>
+                </div>
               </div>
               <p className="text-foreground-secondary leading-relaxed">
                 Meu blog é uma expressão da minha filosofia como programador. Para mim, 
@@ -63,7 +75,12 @@ const About = () => {
                 <div className="p-3 rounded-full bg-neon-green/20">
                   <Code className="w-6 h-6 text-neon-green" />
                 </div>
-                <h3 className="text-xl font-semibold">Habilidades</h3>
+                <div>
+                  <div className="font-mono text-xs text-neon-green mb-1">
+                    <span className="text-neon-cyan">$</span> top -p $(pgrep -f "skills")
+                  </div>
+                  <h3 className="text-xl font-semibold">Habilidades</h3>
+                </div>
               </div>
               <div className="space-y-4">
                 {skills.map((skill, index) => (
@@ -73,10 +90,15 @@ const About = () => {
                       <span className="text-xs text-foreground-muted">{skill.level}%</span>
                     </div>
                     <div className="h-2 bg-background-tertiary rounded-full overflow-hidden">
-                      <div 
-                        className={`h-full bg-gradient-to-r from-neon-${skill.color} to-neon-${skill.color}/60 rounded-full transition-all duration-1000 ease-out`}
-                        style={{ width: `${skill.level}%` }}
-                      />
+                    <div 
+                      className={`h-full rounded-full transition-all duration-1000 ease-out ${
+                        skill.color === 'neon-cyan' ? 'bg-gradient-to-r from-neon-cyan to-neon-cyan/60' :
+                        skill.color === 'neon-purple' ? 'bg-gradient-to-r from-neon-purple to-neon-purple/60' :
+                        skill.color === 'neon-green' ? 'bg-gradient-to-r from-neon-green to-neon-green/60' :
+                        'bg-gradient-to-r from-neon-pink to-neon-pink/60'
+                      }`}
+                      style={{ width: `${skill.level}%` }}
+                    />
                     </div>
                   </div>
                 ))}
@@ -89,7 +111,12 @@ const About = () => {
                 <div className="p-3 rounded-full bg-neon-orange/20">
                   <Palette className="w-6 h-6 text-neon-orange" />
                 </div>
-                <h3 className="text-xl font-semibold">Tecnologias</h3>
+                <div>
+                  <div className="font-mono text-xs text-neon-green mb-1">
+                    <span className="text-neon-cyan">$</span> ls /usr/local/bin/ | grep -E "(tech|tools)"
+                  </div>
+                  <h3 className="text-xl font-semibold">Stack & Ferramentas</h3>
+                </div>
               </div>
               <div className="flex flex-wrap gap-3">
                 {technologies.map((tech, index) => (

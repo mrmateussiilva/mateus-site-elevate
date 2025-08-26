@@ -45,7 +45,9 @@ const Projects = () => {
     <section id="projetos" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <span className="text-neon-purple font-mono text-sm uppercase tracking-wider">/* Projetos */</span>
+          <div className="font-mono text-neon-green mb-4 text-left max-w-md mx-auto">
+            <span className="text-neon-cyan">mateus@dev:~/projects$</span> ls -la --sort=time
+          </div>
           <h2 className="text-4xl md:text-6xl font-bold mt-4 mb-6">
             Meus <span className="text-neon-cyan">trabalhos</span> recentes
           </h2>
@@ -61,12 +63,20 @@ const Projects = () => {
               className="group glass p-8 rounded-2xl hover-glow hover-lift cursor-pointer relative overflow-hidden"
             >
               {/* Background gradient */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-5 group-hover:opacity-10 transition-opacity duration-300`} />
+              <div className={`absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-300 ${
+                project.gradient === 'from-neon-cyan to-neon-purple' ? 'bg-gradient-to-br from-neon-cyan to-neon-purple' :
+                project.gradient === 'from-neon-purple to-neon-pink' ? 'bg-gradient-to-br from-neon-purple to-neon-pink' :
+                'bg-gradient-to-br from-neon-green to-neon-cyan'
+              }`} />
               
               <div className="relative z-10">
                 {/* Project type icon */}
                 <div className="flex items-center justify-between mb-6">
-                  <div className={`p-3 rounded-full bg-gradient-to-r ${project.gradient} bg-opacity-20`}>
+                  <div className={`p-3 rounded-full bg-opacity-20 ${
+                    project.gradient === 'from-neon-cyan to-neon-purple' ? 'bg-neon-cyan' :
+                    project.gradient === 'from-neon-purple to-neon-pink' ? 'bg-neon-purple' :
+                    'bg-neon-green'
+                  }`}>
                     <project.icon className="w-6 h-6 text-white" />
                   </div>
                   <span className="text-xs font-mono uppercase tracking-wider text-foreground-muted">
