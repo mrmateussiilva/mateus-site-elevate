@@ -2,10 +2,10 @@ import { User, Code, Palette, Lightbulb } from "lucide-react";
 
 const About = () => {
   const skills = [
-    { category: "Front-end", level: 95, color: "neon-cyan" },
-    { category: "Back-end", level: 88, color: "neon-purple" },
-    { category: "UX/UI", level: 82, color: "neon-green" },
-    { category: "DevOps", level: 75, color: "neon-pink" },
+    { category: "Front-end", level: 87, color: "neon-cyan" },
+    { category: "Back-end", level: 90, color: "neon-purple" },
+    { category: "UX/UI", level: 80, color: "neon-green" },
+    { category: "DevOps", level: 90, color: "neon-pink" },
   ];
 
   const technologies = [

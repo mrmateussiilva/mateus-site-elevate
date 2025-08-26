@@ -43,21 +43,21 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "contato@mateusjsilva.com",
-      href: "mailto:contato@mateusjsilva.com",
+      value: "matuespython@gmail.com",
+      href: "mailto:matuespython@gmail.com",
       color: "neon-cyan",
     },
     {
       icon: Phone,
       label: "Telefone",
-      value: "+55 (11) 99999-9999",
+      value: "+55 (27) 99590-0071",
       href: "tel:+5511999999999",
       color: "neon-purple",
     },
     {
       icon: MapPin,
       label: "Localização",
-      value: "São Paulo, Brasil",
+      value: "Espírito Santo, Brasil",
       href: "#",
       color: "neon-green",
     },
@@ -67,19 +67,19 @@ const Contact = () => {
     {
       icon: Github,
       label: "GitHub",
-      href: "https://github.com/mateusjsilva",
+      href: "https://github.com/mrmateussiilva",
       color: "neon-cyan",
     },
     {
       icon: Linkedin,
       label: "LinkedIn", 
-      href: "https://linkedin.com/in/mateusjsilva",
+      href: "https://linkedin.com/",
       color: "neon-purple",
     },
     {
       icon: Twitter,
       label: "Twitter",
-      href: "https://twitter.com/mateusjsilva",
+      href: "#",
       color: "neon-green",
     },
   ];
